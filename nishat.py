@@ -109,14 +109,33 @@ def two(nums,target):
     return []
 print(two([6,7,8,0],target=8))
 
-def number(nums,target):
+def numn(nums,terget):
     seen ={}
-    for i, num in enumerate(nums):
-        remain = target - num
-
+    for i ,num in enumerate(nums):
+        remain = terget - num
         if remain in seen:
             return [seen[remain],i]
-        seen [num] = i
+        seen[num] = i
 
     return []
-print(number([1,4,7,9],target=5))
+print(numn([2,3,4,5,6],terget=4))
+
+
+import string
+text ="amar desh onek boro"
+translator=str.maketrans('','',string.punctuation)
+clean_text=text.translate(translator)
+clean_text=clean_text.lower()
+words=clean_text.split()
+print(words)
+
+def number(nums,terget):
+    seen ={}
+    for i , num in enumerate(nums):
+        remain= terget - num
+        if remain in seen:
+            return [seen[remain],i]
+        seen [num]= i
+
+    return []
+print(number([2,4,6,9.9],6))
